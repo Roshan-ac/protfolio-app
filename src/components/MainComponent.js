@@ -4,6 +4,7 @@ import {
     BrowserRouter as Router,
     Routes,
     Route,
+    HashRouter,
    
 } from "react-router-dom";
 import About from "../pages/About";
@@ -16,7 +17,7 @@ function MainComponet() {
     return (
 
         <div className="container bg-slate-900 h-[100vh]">
-            <Router>
+            <HashRouter>
             <Header />
                 <Routes>
                     <Route path="/" element={<HomePage />} />
@@ -25,7 +26,7 @@ function MainComponet() {
                     <Route path="/signup" element={<SignUp />} />
                     <Route path="/login" element={<Login />} />
                 </Routes>
-            </Router>
+            </HashRouter>
             <Footer />
         </div>
     );
