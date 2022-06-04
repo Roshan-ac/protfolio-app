@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Roshan-ac/protfolio-app/static/css/main.6d93800f.css",
+    "main.js": "/Roshan-ac/protfolio-app/static/js/main.6b067fc1.js",
+    "index.html": "/Roshan-ac/protfolio-app/index.html",
+    "main.6d93800f.css.map": "/Roshan-ac/protfolio-app/static/css/main.6d93800f.css.map",
+    "main.6b067fc1.js.map": "/Roshan-ac/protfolio-app/static/js/main.6b067fc1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6d93800f.css",
+    "static/js/main.6b067fc1.js"
+  ]
+}
