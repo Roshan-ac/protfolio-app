@@ -1,13 +1,379 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+.typewriter {
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid tomato;
+    /* The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em;
+    /* Adjust as needed */
+    -webkit-animation: typing 3.5s steps(40, end), blink-caret .75s steps(40, end);
+    animation: typing 3.5s steps(40, end), blink-caret .75s steps(40, end);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+/* The typing effect */
+
+@-webkit-keyframes typing {
+    from {
+        width: 0%
+    }
+    to {
+        width: 80%
+    }
 }
+
+@keyframes typing {
+    from {
+        width: 0%
+    }
+    to {
+        width: 80%
+    }
+}
+
+
+/* The typewriter cursor effect */
+
+@-webkit-keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent
+    }
+    50% {
+        border-color: tomato;
+    }
+    80% {
+        border: none
+    }
+    100% {
+        border: none
+    }
+}
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent
+    }
+    50% {
+        border-color: tomato;
+    }
+    80% {
+        border: none
+    }
+    100% {
+        border: none
+    }
+}
+
+.float-right {
+    float: right;
+}
+
+@keyframes html {
+    0% {
+        width: 0%;
+    }
+    10% {
+        width: 10%;
+    }
+    20% {
+        width: 20%;
+    }
+    30% {
+        width: 30%;
+    }
+    40% {
+        width: 40%;
+    }
+    50% {
+        width: 50%;
+    }
+    60% {
+        width: 60%;
+    }
+    70% {
+        width: 65%;
+    }
+    100% {
+        width: 70%;
+    }
+}
+
+.animate-html {
+    -webkit-animation: html 1s linear forwards;
+    animation: html 1s linear forwards;
+}
+
+@-webkit-keyframes css {
+    0% {
+        width: 0%;
+    }
+    10% {
+        width: 10%;
+    }
+    20% {
+        width: 20%;
+    }
+    30% {
+        width: 30%;
+    }
+    40% {
+        width: 40%;
+    }
+    50% {
+        width: 50%;
+    }
+    60% {
+        width: 55%;
+    }
+    70% {
+        width: 60%;
+    }
+    100% {
+        width: 64%;
+    }
+}
+
+@keyframes css {
+    0% {
+        width: 0%;
+    }
+    10% {
+        width: 10%;
+    }
+    20% {
+        width: 20%;
+    }
+    30% {
+        width: 30%;
+    }
+    40% {
+        width: 40%;
+    }
+    50% {
+        width: 50%;
+    }
+    60% {
+        width: 55%;
+    }
+    70% {
+        width: 60%;
+    }
+    100% {
+        width: 64%;
+    }
+}
+
+.animate-css {
+    -webkit-animation: css 1s linear forwards;
+    animation: css 1s linear forwards;
+}
+
+@-webkit-keyframes js {
+    0% {
+        width: 0%;
+    }
+    10% {
+        width: 10%;
+    }
+    20% {
+        width: 20%;
+    }
+    30% {
+        width: 30%;
+    }
+    40% {
+        width: 40%;
+    }
+    50% {
+        width: 45%;
+    }
+    60% {
+        width: 50%;
+    }
+    70% {
+        width: 55%;
+    }
+    100% {
+        width: 60%;
+    }
+}
+
+@keyframes js {
+    0% {
+        width: 0%;
+    }
+    10% {
+        width: 10%;
+    }
+    20% {
+        width: 20%;
+    }
+    30% {
+        width: 30%;
+    }
+    40% {
+        width: 40%;
+    }
+    50% {
+        width: 45%;
+    }
+    60% {
+        width: 50%;
+    }
+    70% {
+        width: 55%;
+    }
+    100% {
+        width: 60%;
+    }
+}
+
+.animate-js {
+    -webkit-animation: js 1s linear forwards;
+    animation: js 1s linear forwards;
+}
+
+@-webkit-keyframes nodejs {
+    0% {
+        width: 0%;
+    }
+    10% {
+        width: 5%;
+    }
+    20% {
+        width: 10%;
+    }
+    30% {
+        width: 12%;
+    }
+    40% {
+        width: 15%;
+    }
+    50% {
+        width: 18%;
+    }
+    60% {
+        width: 26%;
+    }
+    70% {
+        width: 30%;
+    }
+    100% {
+        width: 36%;
+    }
+}
+
+@keyframes nodejs {
+    0% {
+        width: 0%;
+    }
+    10% {
+        width: 5%;
+    }
+    20% {
+        width: 10%;
+    }
+    30% {
+        width: 12%;
+    }
+    40% {
+        width: 15%;
+    }
+    50% {
+        width: 18%;
+    }
+    60% {
+        width: 26%;
+    }
+    70% {
+        width: 30%;
+    }
+    100% {
+        width: 36%;
+    }
+}
+
+.animate-nodejs {
+    -webkit-animation: nodejs 1s linear forwards;
+    animation: nodejs 1s linear forwards;
+}
+
+@-webkit-keyframes react {
+    0% {
+        width: 0%;
+    }
+    10% {
+        width: 10%;
+    }
+    20% {
+        width: 20%;
+    }
+    30% {
+        width: 30%;
+    }
+    40% {
+        width: 40%;
+    }
+    50% {
+        width: 50%;
+    }
+    60% {
+        width: 60%;
+    }
+    70% {
+        width: 65%;
+    }
+    80% {
+        width: 70%;
+    }
+    100% {
+        width: 75%;
+    }
+}
+
+@keyframes react {
+    0% {
+        width: 0%;
+    }
+    10% {
+        width: 10%;
+    }
+    20% {
+        width: 20%;
+    }
+    30% {
+        width: 30%;
+    }
+    40% {
+        width: 40%;
+    }
+    50% {
+        width: 50%;
+    }
+    60% {
+        width: 60%;
+    }
+    70% {
+        width: 65%;
+    }
+    80% {
+        width: 70%;
+    }
+    100% {
+        width: 75%;
+    }
+}
+
+.animate-react {
+    -webkit-animation: react 1s linear forwards;
+    animation: react 1s linear forwards;
+}
+
+@tailwind utilities;
