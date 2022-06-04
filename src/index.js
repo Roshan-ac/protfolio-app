@@ -1,13 +1,20 @@
-import * as React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import './index.css'
+import { HashRouter, Routes, Route } from "react-router-dom";
+import Footer from './components/Footer';
+import Header from './components/Header';
+import About from './pages/About';
+import SignUp from './pages/Authentication';
+import Contact from './pages/Contact';
+import HomePage from './pages/HomePage';
+import Login from './pages/Login';
+
 ReactDOM.render(
   <React.StrictMode>
- 
+            <div className="Main bg-slate-900">
             <HashRouter>
- <div className="container bg-slate-900 h-[100vh]">
-            <Header />
+               <Header/>
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path='/about' element={<About />} />
@@ -16,8 +23,9 @@ ReactDOM.render(
                     <Route path="/login" element={<Login />} />
                 </Routes>
             <Footer />
-        </div>
+        
             </HashRouter>
+            </div>
   </React.StrictMode>,
   document.getElementById('root')
 );

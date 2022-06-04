@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 function Header(){
     return(
 <>
@@ -10,17 +11,17 @@ function Header(){
                 <span class="ml-3 text-xl text-white">Cyber-Geek</span>
             </a>
             <nav class=" md:mr-auto md:ml-auto flex flex-wrap items-center text-base justify-center">
-                <a href="/" class="mr-6 cursor-pointer hover:text-gray-400 hover:transi">Home</a>
-                <a href="About" class="mr-6 cursor-pointer hover:text-gray-400 hover:transi">About</a>
-                <a href="#" class="mr-6 cursor-pointer hover:text-gray-400 hover:transi">Service</a>
-                <a href="/contact" class="mr-6 cursor-pointer hover:text-gray-400 hover:transi">Contact</a>
+                <Link to="/" class="mr-6 cursor-pointer hover:text-gray-400 hover:transi">Home</Link>
+                <Link to="About" class="mr-6 cursor-pointer hover:text-gray-400 hover:transi">About</Link>
+                <Link to="/service" class="mr-6 cursor-pointer hover:text-gray-400 hover:transi">Service</Link>
+                <Link to="/contact" class="mr-6 cursor-pointer hover:text-gray-400 hover:transi">Contact</Link>
             </nav>
-            <a href="/signup">
+            <Link to="/signup">
                 <button class="text-center md:ml-auto md:mr-auto bg-pink-800 text-stone-50
                 py-1 px-3 text-xs rounded boder-0 focus:outline-none mt-4 md:mt-0 hover:bg-green-800  hover:outline-red-500">
                 Sign up
             </button>
-            </a>
+            </Link>
         </div>
     </header>
 </>
