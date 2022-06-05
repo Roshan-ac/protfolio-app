@@ -12,8 +12,8 @@ import Login from './pages/Login';
 
 ReactDOM.render(
   <React.StrictMode>
-            <div className="Main bg-slate-900">
             <HashRouter>
+            <div className="Main bg-slate-900">
                <Header/>
                 <Routes>
                     <Route path="/" element={<HomePage />} />
@@ -24,8 +24,8 @@ ReactDOM.render(
                 </Routes>
             <Footer />
         
-            </HashRouter>
             </div>
+            </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
