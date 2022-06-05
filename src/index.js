@@ -21,8 +21,8 @@ ReactDOM.render(
                     <Route path="/signup" element={<SignUp />} />
                     <Route path="/login" element={<Login />} />
                 </Routes>
-            <Footer />
         
+            <Footer />
           </Router>
   </React.StrictMode>,
   document.getElementById('root')
