@@ -9,6 +9,7 @@ import SignUp from './pages/Authentication';
 import Contact from './pages/Contact';
 import HomePage from './pages/HomePage';
 import Login from './pages/Login';
+import Service from "./pages/Service";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -16,6 +17,7 @@ ReactDOM.render(
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/about" element={<About />} />
+      <Route path="/service" element={<Service/>}/>
       <Route path="/contact" element={<Contact />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/login" element={<Login />} />
