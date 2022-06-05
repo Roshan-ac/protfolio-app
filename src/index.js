@@ -12,7 +12,7 @@ import Login from './pages/Login';
 
 ReactDOM.render(
   <React.StrictMode>
-            <Router basename="/">
+            <Router>
                <Header/>
                 <Routes>
                     <Route exact path="/" element={<HomePage />} />
