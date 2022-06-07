@@ -6,7 +6,7 @@ function SignUp() {
         <div className="bg-slate-700  md:p-4 text-white">
             <div className="loginbtn flex justify-start ">
                 <Link to="/login">
-                    <button class="text-center  bg-pink-800 text-stone-50
+                    <button className="text-center  bg-pink-800 text-stone-50
                 py-1 px-3 text-xs rounded boder-0 focus:outline-none mt-4 ml-2 md:ml-0 hover:bg-green-800  hover:outline-red-500">
                         login
                     </button>
@@ -46,7 +46,7 @@ function SignUp() {
                         <hr className="my-2 sm: w-90" />
                         <p className="text-sm md:text-base ml-5">please choose strong password</p>
                         <div className="flex justify-center">
-                            <button class="mt-6 w-[150px] md:w-auto text-center md:ml-auto md:mr-auto bg-pink-800 text-stone-50
+                            <button className="mt-6 w-[150px] md:w-auto text-center md:ml-auto md:mr-auto bg-pink-800 text-stone-50
                 py-2 px-6 text-xs rounded boder-0 focus:outline-none   hover:bg-green-800  hover:outline-red-500">
                                 Sign up
                             </button>

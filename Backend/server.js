@@ -1,13 +1,16 @@
 var express=require('express')
+const MongoConnect=require('./db')
 var path=require('path')
 var app=express()
 var Port=3000
 
-app.use(express.static(path.join(__dirname,"../build")))
-app.use('/',require(path.join(__dirname,"/Routes/router")))
+//middleware to use json data
+app.use(express.json())
+app.use('/auth',require('./Routes/auth'))
 
 
 app.listen(Port,function(){
 console.log('Server is running on Port :' ,Port)
 })
 
+MongoConnect();
