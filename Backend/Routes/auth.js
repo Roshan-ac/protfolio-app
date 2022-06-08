@@ -19,6 +19,7 @@ router.post('/signup',[
 ],
 async(req,res)=>{
    // Input Validation start
+   let success=false
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
@@ -50,8 +51,8 @@ id:User.id
 
     //signing userdata with jsonwebtoken
     const tokendata=jwt.sign(data,JWT_Secret)
-
-        res.json({authtoken:tokendata,sucessfull:"User updated to the database successfuly"})
+success=true
+        res.json({authtoken:tokendata,success})
     } catch(errors){
         console.log(errors.message);
         res.status(500).send("Some error occured")
@@ -107,7 +108,7 @@ id:User.id
 
 
 // Getuser endpoint - 
-router.post('/getuser',fetchUser,
+router.get('/getuser',fetchUser,
 async(req,res)=>{
     const userId=req.User.id
 const User=await user.findById(userId).select("-password")

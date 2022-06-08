@@ -3,27 +3,30 @@ import React, {useState} from "react";
 
 
 
-const LoginState = (props) => {
 
-    const [user, setUsers] = useState([]);
+const LoginState = (props) => {
+var noteInitial=[]
+    const [user, setUsers] = useState(noteInitial);
 const token=localStorage.getItem("auth-token")
-    const setUser= async()=>{
+    const fetchUser= async()=>{
         const requestOptions = {
-            method: 'POST',
-            headers: { 'auth-token': token},
+            method: 'GET',
+            headers: {
+                'Content-Type':'application/json',
+                 'auth-token': token
+                },
         };
         const response = await fetch('http://127.0.0.1:5000/auth/getuser', requestOptions)
         const json = await response.json()
-        setUsers([{
-      firstname:json.firstname,
-      lastname:json.lastname
-        }
-        ])
-console.log(user)
+        setUsers(json)
     }
         
+
+
+    //userSignup /
+    
     return (
-        <LoginContext.Provider value={{user,setUser}}>
+        <LoginContext.Provider value={{user,fetchUser}}>
             {props.children};
         </LoginContext.Provider>
     )

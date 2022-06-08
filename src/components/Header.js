@@ -1,7 +1,12 @@
+import { Link,useLocation,useNavigate } from "react-router-dom";
 
 
 function Header(){
-
+    let navigate=useNavigate()
+    const logout=()=>{
+        localStorage.removeItem('auth-token')
+    }
+let location=useLocation()
     return(
 <>
 <header className="text-white bg-slate-800">
@@ -17,12 +22,21 @@ function Header(){
                 <Link to="/service" className={`mr-6 cursor-pointer hover:text-gray-400  ${location.pathname==='/service' ? 'activecolor':''}`}>Service</Link>
                 <Link to="/contact" className={`mr-6 cursor-pointer hover:text-gray-400  ${location.pathname==='/contact' ? 'activecolor':''}`}>Contact</Link>
             </nav>
-            <Link to="/signup">
+            {
+               localStorage.getItem('auth-token')?<div><img className="h-10 w-10 mr-10 rounded-full" src="https://as1.ftcdn.net/v2/jpg/02/15/15/08/1000_F_215150815_D248bPxiY2K1QDO7PixyuGDBVO89TOuW.jpg" alt="" /></div> :""
+            }
+            
+            {!localStorage.getItem('auth-token')?<Link to="/signup">
                 <button className="text-center md:ml-auto md:mr-auto bg-pink-800 text-stone-50
                 py-1 px-3 text-xs rounded boder-0 focus:outline-none mt-4 md:mt-0 hover:bg-green-800  hover:outline-red-500">
                 Sign up
             </button>
-            </Link>
+            </Link>: <Link to="/login">
+                <button onClick={logout} className="text-center md:ml-auto md:mr-auto bg-pink-800 text-stone-50
+                py-1 px-3 text-xs rounded boder-0 focus:outline-none mt-4 md:mt-0 hover:bg-green-800  hover:outline-red-500">
+                Logout
+            </button>
+            </Link>}
         </div>
     </header>
 </>

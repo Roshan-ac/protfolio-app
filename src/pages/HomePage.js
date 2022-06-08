@@ -1,27 +1,20 @@
-import React,{useEffect,useState,useContext} from 'react';
-import {useLocation } from 'react-router-dom';
+import { toBeEmpty } from '@testing-library/jest-dom/dist/matchers';
+import React, { useEffect, useState, useContext } from 'react';
+import { useLocation } from 'react-router';
 import LoginContext from '../Contex/auth/LoginContex';
+import About from "./About"
 
 function HomePage() {
-    let location=useLocation()
-    const User=useContext(LoginContext)
-    useEffect(() => {
-        User.setUser()
-        // setUsers([{
-        //     firstname:User.user[0].firstname,
-        //     lastname:User.user[0].lastname
-        //       }
-        //       ])
-        console.log(User.users[0])
-    }, [location])
+    let location = useLocation()
+    const User = useContext(LoginContext)
+    const { user, fetchUser } = User
 
-    return(
-        <div className=" flex container bg-slate-600">
-            <img className="hidden md:block rounded-full h-28 my-20 md:h-64 md:my-16" src="https://avatars.githubusercontent.com/u/51825251?v=4" alt="img"/>
-   
-            <div className="p">Full Name : </div>
-       
-        </div>
+    useEffect(() => {
+        fetchUser()
+    }, [location])
+    return (
+        <About/>
     )
+    
 }
 export default HomePage;
