@@ -23,7 +23,7 @@
         width: 0%
     }
     to {
-        width: 80%
+        width: 90%
     }
 }
 
@@ -32,7 +32,7 @@
         width: 0%
     }
     to {
-        width: 80%
+        width: 90%
     }
 }
 
@@ -374,6 +374,10 @@
 .animate-react {
     -webkit-animation: react 1s linear forwards;
     animation: react 1s linear forwards;
+}
+
+.activecolor {
+    color: red;
 }
 
 @tailwind utilities;

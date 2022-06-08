@@ -66,11 +66,12 @@ id:User.id
 
 
 // Login page endpoint -- check users value to determine wethere usersinput match with database user data ,aslo authenticate using existing authtoken
-router.get('/login',[
+router.post('/login',[
     body('email','Please enter a valid email address').isEmail(),
     body('password','Please enter a valid password').isLength({min:6})
 ],
 async(req,res)=>{
+    let success=false;
    // Input Validation start
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -96,8 +97,8 @@ id:User.id
 
     //signing userdata with jsonwebtoken
     const tokendata=jwt.sign(data,JWT_Secret)
-
-        res.json({authtoken:tokendata,login_successful:"Successfully Authorized user"})
+    success=true;
+        res.json({authtoken:tokendata,success:success})
     } catch(errors){
         res.status(500).send("Some error occured")
     }

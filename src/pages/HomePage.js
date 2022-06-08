@@ -1,56 +1,27 @@
-import * as React from 'react';
+import React,{useEffect,useState,useContext} from 'react';
+import {useLocation } from 'react-router-dom';
+import LoginContext from '../Contex/auth/LoginContex';
+
 function HomePage() {
-    return (
-        <div className="Home-Page bg-slate-700 text-white  flex md:flex-none justify-center">
-            <div className="Academy_logo flex-col justify-center">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3saLtGoKUqorfPgwC2VAMTe849dSKOJM6kA&usqp=CAU" className=" w-32 rounded-full p-3" alt="" />
-                <p>Lorem ipsum dolor sit amet.</p>
-                <div className="Academy_logo flex-col justify-center">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3saLtGoKUqorfPgwC2VAMTe849dSKOJM6kA&usqp=CAU" className=" w-32 rounded-full p-3" alt="" />
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-                <div className="Academy_logo flex-col justify-center">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3saLtGoKUqorfPgwC2VAMTe849dSKOJM6kA&usqp=CAU" className=" w-32 rounded-full p-3" alt="" />
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-            </div>
-            <div className="Academy_logo flex-col justify-center">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3saLtGoKUqorfPgwC2VAMTe849dSKOJM6kA&usqp=CAU" className=" w-32 rounded-full p-3" alt="" />
-                <p>Lorem ipsum dolor sit amet.</p>
-                <div className="Academy_logo flex-col justify-center">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3saLtGoKUqorfPgwC2VAMTe849dSKOJM6kA&usqp=CAU" className=" w-32 rounded-full p-3" alt="" />
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-                <div className="Academy_logo flex-col justify-center">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3saLtGoKUqorfPgwC2VAMTe849dSKOJM6kA&usqp=CAU" className=" w-32 rounded-full p-3" alt="" />
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-            </div>
-            <div className="Academy_logo flex-col justify-center">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3saLtGoKUqorfPgwC2VAMTe849dSKOJM6kA&usqp=CAU" className=" w-32 rounded-full p-3" alt="" />
-                <p>Lorem ipsum dolor sit amet.</p>
-                <div className="Academy_logo flex-col justify-center">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3saLtGoKUqorfPgwC2VAMTe849dSKOJM6kA&usqp=CAU" className=" w-32 rounded-full p-3" alt="" />
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-                <div className="Academy_logo flex-col justify-center">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3saLtGoKUqorfPgwC2VAMTe849dSKOJM6kA&usqp=CAU" className=" w-32 rounded-full p-3" alt="" />
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-            </div>
-            <div className="Academy_logo flex-col justify-center">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3saLtGoKUqorfPgwC2VAMTe849dSKOJM6kA&usqp=CAU" className=" w-32 rounded-full p-3" alt="" />
-                <p>Lorem ipsum dolor sit amet.</p>
-                <div className="Academy_logo flex-col justify-center">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3saLtGoKUqorfPgwC2VAMTe849dSKOJM6kA&usqp=CAU" className=" w-32 rounded-full p-3" alt="" />
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-                <div className="Academy_logo flex-col justify-center">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3saLtGoKUqorfPgwC2VAMTe849dSKOJM6kA&usqp=CAU" className=" w-32 rounded-full p-3" alt="" />
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-            </div>
+    let location=useLocation()
+    const User=useContext(LoginContext)
+    useEffect(() => {
+        User.setUser()
+        // setUsers([{
+        //     firstname:User.user[0].firstname,
+        //     lastname:User.user[0].lastname
+        //       }
+        //       ])
+        console.log(User.users[0])
+    }, [location])
+
+    return(
+        <div className=" flex container bg-slate-600">
+            <img className="hidden md:block rounded-full h-28 my-20 md:h-64 md:my-16" src="https://avatars.githubusercontent.com/u/51825251?v=4" alt="img"/>
+   
+            <div className="p">Full Name : </div>
+       
         </div>
-    );
+    )
 }
 export default HomePage;

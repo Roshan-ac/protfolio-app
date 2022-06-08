@@ -1,7 +1,7 @@
 import * as React from 'react';
 function Footer(){
     return (
-    <div className="Footer bg-slate-900 p-4">
+    <div className="Footer bg-slate-900 p-4 h-[20vh]">
     <div className="flex py-2 m-auto text-gray-800 text-sm flex-col items-center max-w-screen-xl ">
             <div className="md:flex-auto md:flex-row-reverse mt-2 flex-row flex ">
                 <a target="_blank " href="https://github.com/Roshan-ac " className="w-8 mx-3 ">
