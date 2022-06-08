@@ -2,7 +2,7 @@ var express=require('express')
 const MongoConnect=require('./db')
 var path=require('path')
 var app=express()
-var Port=3000
+var Port=5000
 
 //middleware to use json data
 app.use(express.json())
