@@ -6,7 +6,7 @@ var Port=3000
 
 //middleware to use json data
 app.use(express.json())
-app.use('/signup',require('./Routes/auth'))
+app.use('/auth',require('./Routes/auth'))
 
 
 app.listen(Port,function(){
