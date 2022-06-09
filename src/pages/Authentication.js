@@ -11,7 +11,7 @@ function SignUp() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ firstname:credential.firstname,lastname:credential.lastname,email:credential.email,password:credential.password })
         };
-        const response = await fetch('http://127.0.0.1:5000/auth/signup', requestOptions)
+        const response = await fetch('https://cybergeek-backend.netlify.app/auth/signup', requestOptions)
        const json= await response.json()
        if(json.success){
            localStorage.setItem('auth-token',json.authtoken)
