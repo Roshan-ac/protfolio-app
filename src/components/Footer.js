@@ -31,10 +31,9 @@ function Footer(){
                         </g>
                      </svg>
                 </a>
-
             </div>
             <div className="my-4 text-white ">© Copyright 2020. All Rights Reserved.</div>
-        </div>
+         </div>
     </div>
     );
 }

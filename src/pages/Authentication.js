@@ -15,7 +15,9 @@ function SignUp() {
        const json= await response.json()
        if(json.success){
            localStorage.setItem('auth-token',json.authtoken)
+           window.location.reload(false)
            navigate('/')
+
        }else {
         alert("Signup failed")
 

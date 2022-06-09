@@ -13,8 +13,8 @@ import Service from "./pages/Service";
 import LoginState from './Contex/auth/LoginState';
 function App(){
     return(
-        <LoginState>
-        <BrowserRouter>
+      <LoginState>
+        <div className="Main bg-slate-900">
           <Header/>
           <Routes>
             <Route path="/" element={<HomePage/>} />
@@ -25,8 +25,8 @@ function App(){
             <Route path="/login" element={<Login />} />
           </Routes>
           <Footer />
-        </BrowserRouter>,
-        </LoginState>
+        </div>
+      </LoginState>
     );
 
 }

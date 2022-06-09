@@ -16,6 +16,7 @@ function Login() {
         if (json.success) {
             localStorage.setItem("auth-token", json.authtoken);
          navigate('/')
+         window.location.reload(false)
         } else {
             alert("please enter a valid credentials")
 

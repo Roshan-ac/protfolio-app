@@ -1,12 +1,17 @@
 import { Link,useLocation,useNavigate } from "react-router-dom";
-
+import { useContext, useEffect } from "react";
+import LoginContext from "../Contex/auth/LoginContex";
 
 function Header(){
-    let navigate=useNavigate()
     const logout=()=>{
         localStorage.removeItem('auth-token')
     }
-let location=useLocation()
+const context=useContext(LoginContext)
+    const {user,fetchUser}=context
+    let location=useLocation()
+    useEffect(() => {
+        fetchUser()
+},[])
     return(
 <>
 <header className="text-white bg-slate-800">
@@ -23,7 +28,7 @@ let location=useLocation()
                 <Link to="/contact" className={`mr-6 cursor-pointer hover:text-gray-400  ${location.pathname==='/contact' ? 'activecolor':''}`}>Contact</Link>
             </nav>
             {
-               localStorage.getItem('auth-token')?<div><img className="h-10 w-10 mr-10 rounded-full" src="https://as1.ftcdn.net/v2/jpg/02/15/15/08/1000_F_215150815_D248bPxiY2K1QDO7PixyuGDBVO89TOuW.jpg" alt="" /></div> :""
+               localStorage.getItem('auth-token')?<div className="flex mr-56 justify-center"><img className="h-10 w-10 mr-8 rounded-full" src="https://as1.ftcdn.net/v2/jpg/02/15/15/08/1000_F_215150815_D248bPxiY2K1QDO7PixyuGDBVO89TOuW.jpg" alt="" /><div className="flex-col my-2 justify-center">{user.firstname } { user.lastname}</div></div> :""
             }
             
             {!localStorage.getItem('auth-token')?<Link to="/signup">
@@ -32,9 +37,10 @@ let location=useLocation()
                 Sign up
             </button>
             </Link>: <Link to="/login">
+          
                 <button onClick={logout} className="text-center md:ml-auto md:mr-auto bg-pink-800 text-stone-50
                 py-1 px-3 text-xs rounded boder-0 focus:outline-none mt-4 md:mt-0 hover:bg-green-800  hover:outline-red-500">
-                Logout
+                Logout 
             </button>
             </Link>}
         </div>

@@ -16,7 +16,7 @@ const token=localStorage.getItem("auth-token")
                  'auth-token': token
                 },
         };
-        const response = await fetch('http://127.0.0.1:5000/auth/getuser', requestOptions)
+        const response = await fetch('http://192.168.1.65:5000/auth/getuser', requestOptions)
         const json = await response.json()
         setUsers(json)
     }
@@ -27,7 +27,7 @@ const token=localStorage.getItem("auth-token")
     
     return (
         <LoginContext.Provider value={{user,fetchUser}}>
-            {props.children};
+            {props.children}
         </LoginContext.Provider>
     )
 }
