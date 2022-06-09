@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const mongouri="mongodb://localhost:27017/cybergeek";
+const mongouri='mongodb+srv://Roshanac:kali@cybergeek.vlnmz.mongodb.net/?retryWrites=true&w=majority';
 
 const MongoConnect=()=>{
     mongoose.connect(mongouri,()=>{
