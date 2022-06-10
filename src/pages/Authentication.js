@@ -30,12 +30,7 @@ function SignUp() {
     return (
         <div className="bg-slate-700  md:p-4 text-white">
             <div className="loginbtn flex justify-start ">
-                <Link to="/login">
-                    <button className="text-center  bg-pink-800 text-stone-50
-                py-1 px-3 text-xs rounded boder-0 focus:outline-none mt-4 ml-2 md:ml-0 hover:bg-green-800  hover:outline-red-500">
-                        login
-                    </button>
-                </Link>
+          
             </div>
             <div className=" signup  flex justify-center">
 
@@ -76,6 +71,11 @@ function SignUp() {
                                 Sign up
                             </button>
                         </div>
+                        <Link to="/login">
+                    <button className=" ml-[70px] mt-4 text-center underline hover:text-yellow-500 ">
+                        Already have an account
+                    </button>
+                </Link>
 
                     </div>
                 </div>
