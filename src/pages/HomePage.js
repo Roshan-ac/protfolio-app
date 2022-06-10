@@ -1,16 +1,19 @@
-import { toBeEmpty } from '@testing-library/jest-dom/dist/matchers';
-import React, { useEffect, useState, useContext } from 'react';
-import { useLocation } from 'react-router';
-import LoginContext from '../Contex/auth/LoginContex';
-import About from "./About"
+import React, { useContext, useEffect,} from 'react';
 import { Link } from "react-router-dom"
+import LoginContext from '../Contex/auth/LoginContex';
 
 
 function HomePage() {
-useEffect(() => {
-const response=fetch('/youtube.js');
-console.log(response)
-}, [])
+    const contex=useContext(LoginContext)
+    const token=localStorage.getItem('auth-token');   
+    const {fetchdata}=contex
+    useEffect(() => {
+        if(token){
+            fetchdata()
+        }else{
+            console.log('please login')
+        }
+},[])
 
     return (
         <div className="container p-10 flex-col space-y-2 ">

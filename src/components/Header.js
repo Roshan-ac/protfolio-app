@@ -7,19 +7,24 @@ function Header(){
         localStorage.removeItem('auth-token')
     }
 const context=useContext(LoginContext)
-    const {user,fetchUser}=context
+const token=localStorage.getItem('auth-token');   
+const {user,fetchUser}=context
     let location=useLocation()
     useEffect(() => {
-        fetchUser()
+        if(token){
+            fetchUser()
+        }else{
+            console.log('please login')
+        }
 },[])
-    return(
+    return( 
 <>
 <header className="text-white bg-slate-800">
         <div className="container mx-auto flex flex-wrap flex-col items-center p-4 md:flex-row">
             
                 <img src="https://cdn.imgbin.com/2/8/12/imgbin-security-hacker-computer-security-certified-ethical-hacker-white-hat-hacker-2zFhKR82nuSnP2Da9ZF61txgL.jpg" alt="" className="w-10 h-10 text-white bg-yellow-500 p-1 rounded-full">
                 </img>
-                <span className="ml-3 text-xl text-white">Cyber-Geek</span>
+                <span className="ml-3 my-4 text-xl text-white">Cyber-geek</span>
          
             <nav className=" md:mr-auto md:ml-auto flex flex-wrap items-center text-base justify-center">
                 <Link to="/" className={`mr-6 cursor-pointer hover:text-gray-400  ${location.pathname==='/' ? 'activecolor':''}`}>Home</Link>
