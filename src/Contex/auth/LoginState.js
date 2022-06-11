@@ -7,11 +7,14 @@ import React, {useState} from "react";
 const LoginState = (props) => {
 var noteInitial=[]
     const [user, setUsers] = useState(noteInitial);
+    const [data,setData]=useState(noteInitial)
 const token=localStorage.getItem("auth-token")
-const fetchdata= async()=>{
-    const hello = await fetch('https://cybergeek-backend.netlify.app/auth/tutorials')
+const fetchData= async()=>{
+    const hello = await fetch("https://cybergeek-backend.netlify.app/auth/tutorials")
         const file = await hello.json()
+        setData(file.youtube)
         console.log(file)
+       
     }
 
     const fetchUser= async()=>{
@@ -32,7 +35,7 @@ const fetchdata= async()=>{
     //userSignup /
     
     return (
-        <LoginContext.Provider value={{user,fetchUser,fetchdata}}>
+        <LoginContext.Provider value={{user,fetchUser,data,fetchData}}>
             {props.children}
         </LoginContext.Provider>
     )
