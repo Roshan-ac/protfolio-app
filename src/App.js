@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import HomePage from './pages/HomePage';
 import Login from './pages/Login';
 import Service from "./pages/Service";
+import Dashboard from "./pages/Dashboard"
 
 import LoginState from './Contex/auth/LoginState';
 function App(){
@@ -23,6 +24,7 @@ function App(){
             <Route path="/contact" element={<Contact />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/dashboard" element={<Dashboard/>} />
           </Routes>
           <Footer />
         </div>

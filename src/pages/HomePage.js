@@ -9,11 +9,7 @@ function HomePage() {
     const token = localStorage.getItem('auth-token');
     const { data, fetchData } = contex
     useEffect(() => {
-        if (!token) {
             fetchData()
-        } else {
-            console.log('please login')
-        }
     }, [])
 
     return (
