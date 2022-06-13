@@ -8,12 +8,12 @@ const LoginState = (props) => {
 var noteInitial=[]
     const [user, setUsers] = useState(noteInitial);
     const [data,setData]=useState(noteInitial)
+    const [profile, setProfile] = useState("https://cdn.iconscout.com/icon/free/png-256/businessman-707-1128970.png")
 const token=localStorage.getItem("auth-token")
 const fetchData= async()=>{
     const hello = await fetch("https://cybergeek-backend.netlify.app/auth/tutorials")
         const file = await hello.json()
         setData(file.youtube)
-        console.log(file)
        
     }
 
@@ -31,11 +31,24 @@ const fetchData= async()=>{
     }
         
 
+const fetchimg=async()=>{
+
+        const requestOptions = {
+            method: 'GET',
+            headers: {
+                'Content-Type':'application/json',
+                'auth-token': token
+            },
+        };
+        const response = await fetch('https://cybergeek-backend.netlify.app/profile/getimg', requestOptions)
+        const json = await response.json()
+        setProfile(json.profileimg)
+    }
 
     //userSignup /
     
     return (
-        <LoginContext.Provider value={{user,fetchUser,data,fetchData}}>
+        <LoginContext.Provider value={{user,fetchUser,data,fetchData,profile,fetchimg}}>
             {props.children}
         </LoginContext.Provider>
     )
