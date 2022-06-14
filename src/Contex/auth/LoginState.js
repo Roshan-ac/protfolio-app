@@ -8,7 +8,7 @@ const LoginState = (props) => {
 var noteInitial=[]
     const [user, setUsers] = useState(noteInitial);
     const [data,setData]=useState(noteInitial)
-    const [profile, setProfile] = useState("")
+    const [profile, setProfile] = useState("https://mounteschool.edu.np/wp-content/uploads/2019/12/peo.jpg")
 const token=localStorage.getItem("auth-token")
 const fetchData= async()=>{
     const hello = await fetch("https://cybergeek-backend.netlify.app/auth/tutorials")
