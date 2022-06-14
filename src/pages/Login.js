@@ -53,7 +53,7 @@ function Login() {
                         <p className="mt-2 text-center md:text-left text-orange-400 underline text-sm">Forgot password</p>
                     </Link>
                     <div className="flex justify-center">
-                        <button class="mt-6 w-[7rem] text-center md:ml-auto md:mr-auto bg-pink-800 text-stone-50
+                        <button className="mt-6 w-[7rem] text-center md:ml-auto md:mr-auto bg-pink-800 text-stone-50
                 py-2 px-6 text-xs rounded boder-0 focus:outline-none   hover:bg-green-800  hover:outline-red-500">
                             Login
                         </button>

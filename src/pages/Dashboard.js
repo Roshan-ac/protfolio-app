@@ -1,23 +1,23 @@
-import { useContext, useEffect, useLocation, useState } from "react";
+import { useContext, useEffect } from "react";
 import LoginContext from "../Contex/auth/LoginContex";
-import { Link } from "react-router-dom"
+import { Link,useLocation } from "react-router-dom"
 import Modal from "../components/Modal"
-import { renderIntoDocument } from "react-dom/test-utils";
+
 
 
 function Dashboard() {
+    const location=useLocation();
     const context = useContext(LoginContext)
-    const { user, fetchUser,profile,fetchimg } = context
+    const { user,fetchUser,fetchimg } = context
 
+    const logout = () => {
+        localStorage.removeItem('auth-token')        
+    }
     useEffect(() => {
         fetchUser()
         fetchimg()
-    }, [])
+    }, [user])
 
-
-    const logout = () => {
-        localStorage.removeItem('auth-token')
-    }
     return (
         <div className="main p-1 bg-slate-700">
             <div className="usersection space-y-4 m-4 p-4 bg-gray-600 rounded-md">
@@ -25,11 +25,6 @@ function Dashboard() {
                     <div className="image rounded-full h-20 w-20 ">
                         <Modal
                         />
-                        {/* {
-                            localStorage.getItem('auth-token') ?
-                            <img className=" rounded-3xl" src={profile} alt="" srcSet="" />:
-                            <img className=" rounded-3xl" src={profile} alt="" srcSet="" />
-                        } */}
                     </div>
                 </div>
                 <div className="btn flex justify-center">

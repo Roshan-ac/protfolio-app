@@ -8,7 +8,7 @@ const LoginState = (props) => {
 var noteInitial=[]
     const [user, setUsers] = useState(noteInitial);
     const [data,setData]=useState(noteInitial)
-    const [profile, setProfile] = useState("https://cdn.iconscout.com/icon/free/png-256/businessman-707-1128970.png")
+    const [profile, setProfile] = useState("")
 const token=localStorage.getItem("auth-token")
 const fetchData= async()=>{
     const hello = await fetch("https://cybergeek-backend.netlify.app/auth/tutorials")
@@ -25,24 +25,31 @@ const fetchData= async()=>{
                 'auth-token': token
             },
         };
-        const response = await fetch('https://cybergeek-backend.netlify.app/auth/getuser', requestOptions)
-        const json = await response.json()
-        setUsers(json)
-    }
-        
 
+        if(token){
+            const response = await fetch('https://cybergeek-backend.netlify.app/auth/getuser', requestOptions)
+            const json = await response.json()
+            setUsers(json)
+        }
+        
+        
+    }
 const fetchimg=async()=>{
+  
 
         const requestOptions = {
             method: 'GET',
             headers: {
-                'Content-Type':'application/json',
-                'auth-token': token
+              "email":user.email
             },
+           
         };
-        const response = await fetch('https://cybergeek-backend.netlify.app/profile/getimg', requestOptions)
-        const json = await response.json()
-        setProfile(json.profileimg)
+        const response = await fetch('https://cybergeek-backend.netlify.app/profile/getprofile',requestOptions)
+    
+        const json =await response.json()
+        if(json){
+            setProfile(json.image)
+        }
     }
 
     //userSignup /

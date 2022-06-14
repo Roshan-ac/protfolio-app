@@ -2,7 +2,7 @@ import * as React from 'react';
 function Skill(){
     return(
         <div className="Skill_container flex md:p-10 h-[70vh]">
-        <img className="rounded-full hidden md:block h-28 my-20 md:h-64 md:my-28 mt-44" src="https://as1.ftcdn.net/v2/jpg/02/15/15/08/1000_F_215150815_D248bPxiY2K1QDO7PixyuGDBVO89TOuW.jpg" alt="" srcset=""/>
+        <img className="rounded-full hidden md:block h-28 my-20 md:h-64 md:my-28 mt-44" src="https://as1.ftcdn.net/v2/jpg/02/15/15/08/1000_F_215150815_D248bPxiY2K1QDO7PixyuGDBVO89TOuW.jpg" alt="" srcSet=""/>
         <div className="Skill m-5 md:m-20">
             <p className="md:hidden block text-emerald-50 text-lg p-5 ml-24 tracking-wider">MY SKILLS</p>
             <div className="container flex">

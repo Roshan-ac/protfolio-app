@@ -221,7 +221,7 @@ export default function ContactForm() {
                 )}
             </div>
             <p
-                class="text-center text-sm
+                className="text-center text-sm
       ">
             
             </p>
