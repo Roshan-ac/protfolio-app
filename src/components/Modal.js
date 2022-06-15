@@ -23,7 +23,7 @@ const Modal = () => {
    data.append('image',image)
    data.append('email',user.email)
    data.append('cloud_name','cybergeek')
-   fetch("https://cybergeek-backend.netlify.app/profile/upload",{method:"post",body: data}).then(resp => resp.json()).then(data => {setUrl(data.url)}).catch(err => console.log(err))
+   fetch("https://cybergeek-backend.netlify.app/profile/upload",{method:"POST",body: data}).then(resp => resp.json()).then(data => {setUrl(data.url)}).catch(err => console.log(err))
   setShowModal(false)
   }
  

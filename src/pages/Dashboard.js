@@ -16,7 +16,7 @@ function Dashboard() {
     useEffect(() => {
         fetchUser()
         fetchimg()
-    }, [user])
+    }, [])
 
     return (
         <div className="main p-1 bg-slate-700">
