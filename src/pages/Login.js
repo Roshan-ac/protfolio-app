@@ -11,11 +11,11 @@ function Login() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email: credential.email, password: credential.password })
         };
-        const response = await fetch('https://cybergeek-backend.netlify.app/auth/login', requestOptions)
+        const response = await fetch('http://127.0.0.1:5000/auth/login', requestOptions)
         const json = await response.json()
         if (json.success) {
             localStorage.setItem("auth-token", json.authtoken);
-         navigate('/')
+         navigate('/dashboard')
          window.location.reload(false)
         } else {
             alert("please enter a valid credentials")

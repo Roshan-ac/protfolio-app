@@ -1,12 +1,11 @@
 import Skill from "./Skill";
-import img from '../assets/umesh.jpg'
 function About(){
   
     return(
 <>
 <div className="AboutPage bg-slate-700 pb-14 justify-center">
 <div className="flex Intro_container text-white bg-slate-700 rounded-lg md:p-10">
-            <img className=" hidden md:block rounded-full h-28 my-20 md:h-64 md:my-16" src={img} alt="img"/>
+            <img className=" hidden md:block rounded-full h-28 my-20 md:h-64 md:w-64 md:my-16" src="https://res.cloudinary.com/cybergeek/image/upload/v1655187892/samples/people/kitchen-bar.jpg" alt="img"/>
             <div className="md:p-7 w-full">
                 <div className="intro w-1/2">
                     <p className="typewriter mt-7 md:mt-16 text-md md:text-xl ml-16">My self Roshan acharya </p>

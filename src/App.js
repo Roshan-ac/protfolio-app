@@ -12,6 +12,7 @@ import Service from "./pages/Service";
 import Dashboard from "./pages/Dashboard"
 
 import LoginState from './Contex/auth/LoginState';
+import Modal from './components/Modal';
 function App(){
     return(
       <LoginState>
@@ -24,7 +25,8 @@ function App(){
             <Route path="/contact" element={<Contact />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/dashboard" element={<Dashboard/>} />
+            <Route path="/dashboard" element={<Dashboard/>}/>
+             <Route path="/profile_edit" element={<Modal/>} />
           </Routes>
           <Footer />
         </div>
