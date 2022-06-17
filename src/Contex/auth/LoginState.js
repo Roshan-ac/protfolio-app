@@ -10,7 +10,7 @@ var noteInitial=[]
     const [data,setData]=useState(noteInitial)
 const token=localStorage.getItem("auth-token")
 const fetchData= async()=>{
-    const hello = await fetch("http://127.0.0.1:5000/auth/tutorials")
+    const hello = await fetch("https://cybergeek-backend.netlify.app/auth/tutorials")
         const file = await hello.json()
         setData(file.youtube)
        
@@ -26,7 +26,7 @@ const fetchData= async()=>{
         };
 
         if(token){
-            const response = await fetch('http://127.0.0.1:5000/auth/getuser', requestOptions)
+            const response = await fetch('https://cybergeek-backend.netlify.app/auth/getuser', requestOptions)
             const json = await response.json()
             setUsers(json)
         }
