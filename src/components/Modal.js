@@ -60,7 +60,7 @@ fetchUser()
   const uploadImage = async (base64EncodedImage) => {
     const token=localStorage.getItem('auth-token')
     try {
-      await fetch('http://127.0.0.1:5000/profile/update_profile', {
+      await fetch('http://cybergeek-backend.netlify.app/profile/update_profile', {
         method: 'POST',
         body: JSON.stringify({ data: base64EncodedImage,username:inputState.username,email:inputState.email}),
         headers: {
