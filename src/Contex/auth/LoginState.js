@@ -5,8 +5,8 @@ import React, {useState} from "react";
 
 
 const LoginState = (props) => {
-    var url = "http://127.0.0.1:5000/"
-    // var url ="https://cybergeek-backend.netlify.app/"
+    // var url = "http://127.0.0.1:5000/"
+    var url ="https://cybergeek-backend.netlify.app/"
 
 
 var noteInitial=[]

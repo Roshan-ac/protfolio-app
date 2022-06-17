@@ -7,8 +7,8 @@ import LoginContext from "../Contex/auth/LoginContex";
 import { Button } from "@material-ui/core";
 export default function Modal() {
 
-  var url = "http://127.0.0.1:5000/"
-  // var url ="https://cybergeek-backend.netlify.app/"
+  // var url = "http://127.0.0.1:5000/"
+  var url ="https://cybergeek-backend.netlify.app/"
 
   //All state defination
   let Navigate = useNavigate()

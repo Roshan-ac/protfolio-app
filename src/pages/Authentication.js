@@ -2,8 +2,8 @@ import {Link,useNavigate } from "react-router-dom"
 import React, {useState} from 'react';
 import { useForm, useWatch } from "react-hook-form";
 function SignUp() {
-    var url = "http://127.0.0.1:5000/"
-    // var url ="https://cybergeek-backend.netlify.app/"
+    // var url = "http://127.0.0.1:5000/"
+    var url ="https://cybergeek-backend.netlify.app/"
     const {
         register,
         handleSubmit,
