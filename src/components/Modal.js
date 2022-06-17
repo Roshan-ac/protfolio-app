@@ -39,13 +39,14 @@ export default function Modal() {
 
  const [btnstate,setBtnState]=useState(true)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault()
     if (!previewImage) return;
-    uploadImage(previewImage)
-    setTimeout(() => {
+   const imageupload= await uploadImage(previewImage)
+   fetchUser()
+ setTimeout(() => {
       setBtnState(false)
-    }, 3000);
+    }, 5000);
   }
   
   const handleCancle =()=>{
@@ -75,9 +76,8 @@ fetchUser()
 
   }
 const handlefetch=(e)=>{
-  e.preventDefault()
-  fetchUser()
-  Navigate('/dashboard')
+e.preventDefault()
+Navigate('/dashboard')
 
 }
   return (
@@ -114,7 +114,7 @@ const handlefetch=(e)=>{
         </div>
 <hr />
 <div className="flex justify-center p-2">
-  <button type="submit" onClick={handleSubmit} className={btnstate?"border px-5 py-1":"px-5 py-1 text-green-500"}>{btnstate?"Save":"successfully updated data"}</button>
+  <button type="submit" onClick={handleSubmit} className={btnstate?"border px-5 py-1":"px-5 py-1 text-green-600 text-md"}>{btnstate?"Save":"successfully updated data"}</button>
 </div>
       </div>
         </form>
