@@ -42,7 +42,7 @@ export default function Modal() {
   const handleSubmit = async(e) => {
     e.preventDefault()
     if (!previewImage) return;
-   const imageupload= await uploadImage(previewImage)
+   uploadImage(previewImage)
    fetchUser()
  setTimeout(() => {
       setBtnState(false)
