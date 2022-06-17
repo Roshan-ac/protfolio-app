@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import LoginContext from "../Contex/auth/LoginContex";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom"
-import Modal from "../components/Modal"
+
 
 
 

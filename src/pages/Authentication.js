@@ -2,6 +2,8 @@ import {Link,useNavigate } from "react-router-dom"
 import React, {useState} from 'react';
 import { useForm, useWatch } from "react-hook-form";
 function SignUp() {
+    var url = "http://127.0.0.1:5000/"
+    // var url ="https://cybergeek-backend.netlify.app/"
     const {
         register,
         handleSubmit,
@@ -20,7 +22,7 @@ function SignUp() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ fullname:credential.fullname,email:credential.email,password:credential.password })
         };
-        const response = await fetch('https://cybergeek-backend.netlify.app/auth/signup', requestOptions)
+        const response = await fetch(`${url}auth/signup`, requestOptions)
        const json= await response.json()
        if(json.success){
            localStorage.setItem('auth-token',json.authtoken)

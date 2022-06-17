@@ -1,7 +1,8 @@
 import {Link, useNavigate } from "react-router-dom"
-
 import React, { useState} from 'react';
 function Login() {
+    var url = "http://127.0.0.1:5000/"
+    // var url ="https://cybergeek-backend.netlify.app/"
     let navigate=useNavigate()
     const [credential, setCredential] = useState({ email: "", password: "" })
     const handlesubmit = async (e) => {
@@ -11,7 +12,7 @@ function Login() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email: credential.email, password: credential.password })
         };
-        const response = await fetch('https://cybergeek-backend.netlify.app/auth/login', requestOptions)
+        const response = await fetch(`${url}auth/login`, requestOptions)
         const json = await response.json()
         if (json.success) {
             localStorage.setItem("auth-token", json.authtoken);

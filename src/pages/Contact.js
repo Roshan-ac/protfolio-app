@@ -17,7 +17,6 @@ export default function ContactForm() {
     const userName = useWatch({ control, name: "name", defaultValue: "Someone" });
 
     const onSubmit = async (data, e) => {
-        console.log(data);
         await fetch("https://api.web3forms.com/submit", {
             method: "POST",
             headers: {
@@ -47,8 +46,10 @@ export default function ContactForm() {
 
     return (
         <>
+    
             <div className="w-full max-w-sm mx-auto my-5   rounded-md p-7">
                 {!isSubmitSuccessful && (
+                
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <input
                             type="hidden"
@@ -78,8 +79,8 @@ export default function ContactForm() {
                                 placeholder="Full Name"
                                 autoComplete="false"
                                 className={`w-full px-4 py-3 border-2  rounded-md outline-none  focus:ring-4  ${errors.name
-                                        ? "border-red-600 bg-slate-800 text-white focus:border-red-600 ring-red-100"
-                                        : "border-gray-300 bg-slate-800 text-white focus:border-indigo-600 ring-red-100"
+                                    ? "border-red-600 bg-slate-800 text-white focus:border-red-600 ring-red-100"
+                                    : "border-gray-300 bg-slate-800 text-white focus:border-indigo-600 ring-red-100"
                                     }`}
                                 {...register("name", {
                                     required: "Full name is required",
@@ -223,7 +224,7 @@ export default function ContactForm() {
             <p
                 className="text-center text-sm
       ">
-            
+
             </p>
         </>
     );

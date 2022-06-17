@@ -5,12 +5,16 @@ import React, {useState} from "react";
 
 
 const LoginState = (props) => {
+    var url = "http://127.0.0.1:5000/"
+    // var url ="https://cybergeek-backend.netlify.app/"
+
+
 var noteInitial=[]
     const [user, setUsers] = useState(noteInitial);
     const [data,setData]=useState(noteInitial)
 const token=localStorage.getItem("auth-token")
 const fetchData= async()=>{
-    const hello = await fetch("https://cybergeek-backend.netlify.app/auth/tutorials")
+    const hello = await fetch(`${url}auth/tutorials`)
         const file = await hello.json()
         setData(file.youtube)
        
@@ -26,7 +30,7 @@ const fetchData= async()=>{
         };
 
         if(token){
-            const response = await fetch('https://cybergeek-backend.netlify.app/auth/getuser', requestOptions)
+            const response = await fetch(`${url}auth/getuser`, requestOptions)
             const json = await response.json()
             setUsers(json)
         }
